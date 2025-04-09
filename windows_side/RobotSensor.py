@@ -14,7 +14,7 @@ import numpy as np
 # udp to vmware ubuntu
 import socket
 SERVER_IP = '172.16.0.1'
-SERVER_PORT = '1234'
+SERVER_PORT = 1234
 # SERVER_PORT = int(input('please input server port: '))
 
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)

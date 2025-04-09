@@ -16,7 +16,7 @@ sock.bind(server_address)
 class PosePublisher(Node):
 
     def __init__(self):
-        super().__init__('minimal_publisher')
+        super().__init__('optitrack_pose_publisher')
         self.publisher_ = self.create_publisher(PoseStamped, 'sa_pose/shoulder_marker', 10)
         self.publish_pose()
 
@@ -43,7 +43,7 @@ class PosePublisher(Node):
             msg.header.frame_id = str(frame_id)
             
             self.publisher_.publish(msg)
-            self.get_logger().info(f'Publishing: {msg.pose.orientation.x:.3} {msg.pose.orientation.y:.3} {msg.pose.orientation.z:.3} {msg.pose.orientation.w:.3}')
+            # self.get_logger().info(f'Publishing: {msg.pose.orientation.x:.3} {msg.pose.orientation.y:.3} {msg.pose.orientation.z:.3} {msg.pose.orientation.w:.3}')
             
             frame_id += 1
 
